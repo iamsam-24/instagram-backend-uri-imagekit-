@@ -24,6 +24,7 @@ import {
 } from 'lucide-react';
 
 function App() {
+  const API_URL = "https://luximogram-fs.onrender.com";
   const [currentTab, setCurrentTab] = useState('home');
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -56,7 +57,7 @@ function App() {
   const fetchPosts = async () => {
     try {
       setLoading(true);
-      const res = await fetch('/posts');
+      const res = await fetch(`${API_URL}/posts`);
       if (!res.ok) throw new Error('Failed to fetch posts');
       const data = await res.json();
 
@@ -221,7 +222,7 @@ function App() {
     formData.append('caption', caption);
 
     try {
-      const res = await fetch('/create-post', {
+      const res = await fetch(`${API_URL}/create-post`, {
         method: 'POST',
         body: formData
       });
