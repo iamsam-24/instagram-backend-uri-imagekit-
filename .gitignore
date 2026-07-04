@@ -1,0 +1,10 @@
+backend/node_modules/
+backend/.env
+
+frontend/insta/node_modules/
+frontend/insta/dist/
+frontend/insta/.env
+
+*.log
+.DS_Store
+Thumbs.db
